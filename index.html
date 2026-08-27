@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#050505">
+
+    <title>RaceBox</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#050505">
+</head>
+
+<body>
+
+<div class="app">
+
+    <header>
+        <div class="logo">RACEBOX</div>
+        <div class="subtitle">GPS PERFORMANCE DASHBOARD</div>
+    </header>
+
+
+    <!-- SPEEDOMETER -->
+
+    <section class="speedometer">
+
+        <div class="dial">
+
+            <div id="ticks"></div>
+
+            <div id="numbers"></div>
+
+            <div class="needle" id="needle">
+                <div class="needle-line"></div>
+            </div>
+
+            <div class="needle-center"></div>
+
+            <div class="speed-display">
+                <div id="speed">0.0</div>
+                <span>km/h</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- GPS -->
+
+    <div class="gps-status">
+        <span class="gps-dot" id="gpsDot"></span>
+        <span id="gpsStatus">GPS BELUM AKTIF</span>
+    </div>
+
+
+    <!-- DATA -->
+
+    <section class="stats">
+
+        <div class="stat">
+            <span>MAX SPEED</span>
+            <strong id="maxSpeed">0.0</strong>
+            <small>km/h</small>
+        </div>
+
+        <div class="stat">
+            <span>JARAK</span>
+            <strong id="distance">0.00</strong>
+            <small>km</small>
+        </div>
+
+        <div class="stat">
+            <span>DURASI</span>
+            <strong id="duration">00:00</strong>
+            <small>min</small>
+        </div>
+
+    </section>
+
+
+    <!-- BUTTON -->
+
+    <div class="buttons">
+
+        <button id="startBtn">
+            START GPS
+        </button>
+
+        <button id="resetBtn">
+            RESET
+        </button>
+
+    </div>
+
+
+    <div class="info">
+        Izinkan akses lokasi ketika Chrome memintanya.
+    </div>
+
+</div>
+
+
+<script src="./script.js"></script>
+<script>
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("./sw.js");
+}
+</script>
+</body>
+</html>
